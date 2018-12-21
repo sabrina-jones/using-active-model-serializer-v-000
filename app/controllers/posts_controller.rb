@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    render json: @posts, status: 200
+    #render json: @posts, status: 200
   end
 
   def show
@@ -12,7 +12,11 @@ class PostsController < ApplicationController
       #render json: @post.to_json(only: [:title, :description, :id],
                               #  include: [author: { only: [:name]}])
        # AFTER USING OUR SERIALIZER
-      render json: @post, status: 200
+      #render json: @post, status: 200
+      respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @post}
+    end
   end
 
   def new
