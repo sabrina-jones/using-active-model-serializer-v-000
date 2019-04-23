@@ -5,11 +5,19 @@ describe 'navigate' do
     @post = Post.create(title: "My Post", description: "My post desc")
   end
 
+<<<<<<< HEAD
   #it 'shows the title on the show page in a h1 tag' do
   #  visit post_path(@post)
     #binding.pry
   #  expect(page).to have_css("h1", text: "My Post")
   #end
+=======
+  it 'shows the title on the show page in a h1 tag' do
+    visit post_path(@post)
+    #binding.pry
+    expect(page).to have_css("h1", text: "My Post")
+  end
+>>>>>>> 0856981d1f9cfcb1b8afb4903c36d8b05a019de0
 
   it 'to post pages' do
     visit post_path(@post)
